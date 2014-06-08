@@ -1,0 +1,25 @@
+body	{
+	font-family: sans-serif;
+	color: #6E6E6E; 
+}
+
+.copyright	{
+	font-size: 8px;
+}
+
+.my_content	{
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+.container	{
+	position: relative;
+	max-width: 960px;
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.my_input-size	{
+	width: 200px;
+}

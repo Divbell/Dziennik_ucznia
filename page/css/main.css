@@ -35,7 +35,7 @@ body
 #footer
 {
 	padding: 10px;
-	margin: 10px 20px;
+	margin-top: 10px; 
 	font-size: 0.8em;
 	text-align: center;
 	border-top: 1px solid #C9E0ED;
@@ -44,17 +44,19 @@ body
 #logo
 {
 	padding: 10px 20px;
-	font-size: 200%;
+	font-size: 300%;
+	font-weight: bold;
 }
 
 #mainmenu
 {
-	background:white url(bg.gif) repeat-x left top;
+	background-color: #5C9BDB;
+	width: 100%;
 }
 
 #mainmenu ul
 {
-	padding:6px 20px 5px 20px;
+	padding:6px 20px 5px 0px;
 	margin:0px;
 }
 
@@ -70,14 +72,7 @@ body
 	font-size:12px;
 	font-weight:bold;
 	text-decoration:none;
-	padding:5px 8px;
-}
-
-#mainmenu ul li a:hover, #mainmenu ul li.active a
-{
-	color: #6399cd;
-	background-color:#EFF4FA;
-	text-decoration:none;
+	padding:5px 5px;
 }
 
 div.flash-error, div.flash-notice, div.flash-success
