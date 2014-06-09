@@ -3,16 +3,16 @@
 /* @var $model Uczen */
 
 $this->breadcrumbs=array(
-	'Uczens'=>array('index'),
-	'Create',
+	'Uczniowie'=>array('index'),
+	'Dodaj',
 );
 
 $this->menu=array(
-	array('label'=>'List Uczen', 'url'=>array('index')),
-	array('label'=>'Manage Uczen', 'url'=>array('admin')),
+	array('label'=>'Lista uczniów', 'url'=>array('index')),
+	array('label'=>'Zarządzaj uczniami', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Uczen</h1>
+<h1>Dodaj ucznia</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

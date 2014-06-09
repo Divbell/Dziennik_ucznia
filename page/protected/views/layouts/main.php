@@ -34,8 +34,7 @@
 				<?php $this->widget('zii.widgets.CMenu',array(
 					'items'=>array(
 						array('label'=>'Strona główna', 'url'=>array('/site/index')),
-						array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-						array('label'=>'Contact', 'url'=>array('/site/contact')),
+						array('label'=>'Uczniowie', 'url'=>array('/uczen/index'), 'visible'=>!Yii::app()->user->isGuest),
 						array('label'=>'Logowanie', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 						array('label'=>'Wyloguj ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 					),
@@ -64,7 +63,7 @@
 		<div class="row">
 			<div id="footer"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				&copy; <?php echo date('Y'); ?> by Michał Huras.<br/>
-				<span class="copyright">Zawsze chciałem dodać gdzieś taką stopke... xD.</span><br/>
+				<span class="copyright">Musiałem... ; P</span><br/>
 				<?php echo Yii::powered(); ?>
 			</div><!-- footer -->
 		</div>

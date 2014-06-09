@@ -3,20 +3,20 @@
 /* @var $model Uczen */
 
 $this->breadcrumbs=array(
-	'Uczens'=>array('index'),
+	'Uczen'=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List Uczen', 'url'=>array('index')),
-	array('label'=>'Create Uczen', 'url'=>array('create')),
-	array('label'=>'Update Uczen', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Uczen', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Uczen', 'url'=>array('admin')),
+	array('label'=>'Lista uczniów', 'url'=>array('index')),
+	array('label'=>'Dodaj ucznia', 'url'=>array('create')),
+	array('label'=>'Zaaktualizuj ucznia', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Usuń ucznia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Zarządzaj uczniami', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Uczen #<?php echo $model->id; ?></h1>
+<h1>Przegląd ucznia #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
