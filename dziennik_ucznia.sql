@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+CREATE DATABASE dziennik_ucznia;
 
 --
 -- Struktura tabeli dla tabeli `tbl_obecnosci`
