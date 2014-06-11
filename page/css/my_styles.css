@@ -1,6 +1,7 @@
 body	{
 	font-family: sans-serif;
-	color: #6E6E6E; 
+	color: #6E6E6E;
+    background-color: #ffffff;
 }
 
 .copyright	{
@@ -32,6 +33,65 @@ body	{
 	width: 100%;
 }
 
+.my_table thead th {
+    background-color: #428bca;
+    color: #FFFFFF;
+}
+
+.my_table thead th a {
+    color: #FFFFFF;
+}
+
+
 .my_table_div	{
 	width: 100%;
+}
+
+.my_mainmenu    {
+    background-color: none;
+    border: 1px solid #C9E0ED;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.my_mainmenu ul {
+    padding:6px 20px 5px 0px;
+    margin:0px;
+}
+
+@media screen and (max-width: 768px)	{
+    #mainmenu ul	{
+        margin-top: 5px;
+    }
+}
+
+.my_mainmenu ul li  {
+    display: inline;
+}
+
+.my_mainmenu ul li a    {
+    color:#ffffff;
+    background-color:transparent;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    padding:5px 5px;
+}
+
+.my_view    {
+    margin: 10px 0;
+   font-size: 30px;
+}
+
+.my_present {
+    text-align: center;
+    font-weight: bold;
+}
+
+.my_students_list   {
+    line-height: 2px;
+}
+
+.my_days_list   {
+    display: text-inline;
 }

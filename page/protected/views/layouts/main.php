@@ -35,6 +35,8 @@
 					'items'=>array(
 						array('label'=>'Strona główna', 'url'=>array('/site/index')),
 						array('label'=>'Uczniowie', 'url'=>array('/uczen/index'), 'visible'=>!Yii::app()->user->isGuest),
+                        array('label'=>'Obecności', 'url'=>array('/obecnosci/index'), 'visible'=>!Yii::app()->user->isGuest),
+                        array('label'=>'Użytkownicy', 'url'=>array('/user/index'), 'visible'=>(Yii::app()->user->getName() == "admin")),
 						array('label'=>'Logowanie', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 						array('label'=>'Wyloguj ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 					),

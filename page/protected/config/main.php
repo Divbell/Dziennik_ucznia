@@ -53,7 +53,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=dziennik_ucznia_db',
+			'connectionString' => 'mysql:host=localhost;dbname=dziennik_ucznia',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'fell3lcz',

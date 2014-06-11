@@ -4,7 +4,6 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
 }
 
 #page
@@ -50,7 +49,7 @@ body
 
 #mainmenu
 {
-	background-color: #5C9BDB;
+	background-color: #428bca;
 	width: 100%;
 }
 
