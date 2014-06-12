@@ -14,7 +14,7 @@ $this->menu=array(
 
 <h1><strong>Obecności z dnia <?php echo $_GET['dzien']; ?></strong></h1>
 
-<table class="table my_table table-bordered table-condensed">
+<table class="table my_table table-bordered table-condensed table-responsive">
     <thead>
         <th>ID</th>
         <th>Imię</th>
