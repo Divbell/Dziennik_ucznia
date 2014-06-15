@@ -2,15 +2,8 @@
 
 class ObecnosciController extends Controller
 {
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
 	public $layout='//layouts/column1_2';
 
-	/**
-	 * @return array action filters
-	 */
 	public function filters()
 	{
 		return array(
@@ -19,11 +12,6 @@ class ObecnosciController extends Controller
 		);
 	}
 
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
 	public function accessRules()
 	{
 		return array(
@@ -37,10 +25,6 @@ class ObecnosciController extends Controller
 		);
 	}
 
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
 	public function actionView($dzien)
 	{
 		$this->render('view',array(
@@ -48,34 +32,6 @@ class ObecnosciController extends Controller
 		));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new Obecnosci;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Obecnosci']))
-		{
-			$model->attributes=$_POST['Obecnosci'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_obecnosci));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
 	public function actionUpdate()   {
         if(isset($_POST['id_obecnosci']))   {
         $sql = "UPDATE tbl_obecnosci SET obecny = :obecny WHERE id_obecnosci = :id_obecnosci";
@@ -100,18 +56,8 @@ class ObecnosciController extends Controller
 
         }
         $this->redirect(array('days', 'dzien'=>$_POST['dzien']));
-	/*	if(isset($_POST['obecnosc']))   {
-			$model->attributes=$_POST['Obecnosci'];
-			if($model->save())
-				$this->redirect(array('','id'=>$model->id_obecnosci));
-		}*/
-	}
+    }
 
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
 	public function actionDelete()
 	{
 		$day = $_POST['dzien'];
@@ -122,9 +68,6 @@ class ObecnosciController extends Controller
         $this->redirect(array('index'));
 	}
 
-	/**
-	 * Lists all models.
-	 */
 	public function actionIndex()
 	{
         $model=new Obecnosci;
@@ -160,63 +103,20 @@ class ObecnosciController extends Controller
 
     public function actionStudent()    {
         $id = $_GET['student'];
-<<<<<<< HEAD
 		$present = '+';
         $sql = "SELECT tbl_obecnosci.dzien FROM tbl_uczen LEFT JOIN tbl_obecnosci ON tbl_uczen.id = tbl_obecnosci.id WHERE tbl_uczen.id = :id AND tbl_obecnosci.obecny = :present";
         $command = Yii::app()->db->createCommand($sql);
         $command->bindParam(":id", $id);
 		$command->bindParam(":present", $present);
-=======
-	$present = '+';
-        $sql = "SELECT tbl_obecnosci.dzien FROM tbl_uczen LEFT JOIN tbl_obecnosci ON tbl_uczen.id = tbl_obecnosci.id WHERE tbl_uczen.id = :id AND tbl_obecnosci.obecny = :present";
-        $command = Yii::app()->db->createCommand($sql);
-        $command->bindParam(":id", $id);
-	$command->bindParam(":present", $present);
->>>>>>> 835e886ea1afb323f27e7af00f2dd1422116dfbf
         $dataReader=$command->query();
         $this->render('student', array('dataReader' => $dataReader));
     }
 
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new Obecnosci('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Obecnosci']))
-			$model->attributes=$_GET['Obecnosci'];
 
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return Obecnosci the loaded model
-	 * @throws CHttpException
-	 */
-	public function loadModel($dzien)
-	{
+	public function loadModel($dzien){
 		$model=Obecnosci::model()->findByAttributes(array('dzien'=>$dzien));
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param Obecnosci $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='obecnosci-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
 	}
 }
