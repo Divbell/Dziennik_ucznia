@@ -18,7 +18,9 @@ $this->menu=array(
 <?php
 foreach($dataReader as $row)    {
     echo "<hr><li class='my_days_list'>";
-    echo "<b>".CHtml::link(CHtml::encode($row['dzien']), array('days','dzien'=>$row['dzien']))."</b>";
+    echo "<b>".CHtml::link(CHtml::encode($row['dzien']), array('days','dzien'=>$row['dzien'])).
+              "<form method='post' action='index.php?r=obecnosci/delete' class='my_delete_form pull-right'><input type='hidden' value=".$row['dzien']." name='dzien'>
+               <button type='submit' class='btn btn-danger btn-sm my_delete_button'>Usuń</button></form>"."</b>";
     echo "</li>";
 }
 ?>

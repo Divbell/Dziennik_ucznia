@@ -28,7 +28,7 @@ class ObecnosciController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'days', 'students', 'student', 'update', 'create'),
+				'actions'=>array('index','view', 'days', 'students', 'student', 'update', 'create', 'delete'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -112,13 +112,14 @@ class ObecnosciController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete()
 	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		$day = $_POST['dzien'];
+        $sql = "DELETE FROM tbl_obecnosci WHERE tbl_obecnosci.dzien = :dzien";
+        $command = Yii::app()->db->createCommand($sql);
+        $command->bindParam(":dzien", $day);
+        $command->execute();
+        $this->redirect(array('index'));
 	}
 
 	/**
@@ -131,7 +132,7 @@ class ObecnosciController extends Controller
         if(isset($_POST['Obecnosci']))  {
             $model->attributes=$_POST['Obecnosci'];
             if($model->save())
-                $this->redirect(array('obecnosci','index'));
+                $this->redirect(array('index'));
         }
 
         $dataProvider = new CActiveDataProvider('Obecnosci');
@@ -159,9 +160,11 @@ class ObecnosciController extends Controller
 
     public function actionStudent()    {
         $id = $_GET['student'];
-        $sql = "SELECT tbl_obecnosci.dzien FROM tbl_uczen LEFT JOIN tbl_obecnosci ON tbl_uczen.id = tbl_obecnosci.id WHERE tbl_uczen.id = :id";
+		$present = '+';
+        $sql = "SELECT tbl_obecnosci.dzien FROM tbl_uczen LEFT JOIN tbl_obecnosci ON tbl_uczen.id = tbl_obecnosci.id WHERE tbl_uczen.id = :id AND tbl_obecnosci.obecny = :present";
         $command = Yii::app()->db->createCommand($sql);
         $command->bindParam(":id", $id);
+		$command->bindParam(":present", $present);
         $dataReader=$command->query();
         $this->render('student', array('dataReader' => $dataReader));
     }

@@ -95,3 +95,14 @@ body	{
 .my_days_list   {
     display: text-inline;
 }
+
+.my_danger_button   {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.my_delete_form {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}

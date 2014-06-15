@@ -33,11 +33,12 @@ $this->menu=array(
         else echo "<td class='active my_present'>".$row['obecny'];
         echo "</td>";
         echo "<td>";
-        echo "<form method='post' action='index.php?r=obecnosci/update'><input type='hidden' value=".$row['obecny']." name='obecny'>
+        echo "<form method='post' action='index.php?r=obecnosci/update'>
+                <input type='hidden' value=".$row['obecny']." name='obecny'>
                 <input type='hidden' value=".$_GET['dzien']." name='dzien'>
                 <input type='hidden' value=".$row['id']." name='id'>
                 <input type='hidden' value=".$row['id_obecnosci']." name='id_obecnosci'>
-                <button type='submit' class='btn btn-warning btn-sm'>Change</form>";
+                <button type='submit' class='btn btn-warning btn-sm'>Zmień</button></form>";
         echo "</td>";
         echo "</tr>";
     }
