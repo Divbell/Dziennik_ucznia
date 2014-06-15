@@ -56,7 +56,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=dziennik_ucznia',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'fell3lcz',
+			'password' => 'ENTER YOUR PASSWORD HERE',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 		),
