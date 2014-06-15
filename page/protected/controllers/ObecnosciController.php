@@ -160,11 +160,19 @@ class ObecnosciController extends Controller
 
     public function actionStudent()    {
         $id = $_GET['student'];
+<<<<<<< HEAD
 		$present = '+';
         $sql = "SELECT tbl_obecnosci.dzien FROM tbl_uczen LEFT JOIN tbl_obecnosci ON tbl_uczen.id = tbl_obecnosci.id WHERE tbl_uczen.id = :id AND tbl_obecnosci.obecny = :present";
         $command = Yii::app()->db->createCommand($sql);
         $command->bindParam(":id", $id);
 		$command->bindParam(":present", $present);
+=======
+	$present = '+';
+        $sql = "SELECT tbl_obecnosci.dzien FROM tbl_uczen LEFT JOIN tbl_obecnosci ON tbl_uczen.id = tbl_obecnosci.id WHERE tbl_uczen.id = :id AND tbl_obecnosci.obecny = :present";
+        $command = Yii::app()->db->createCommand($sql);
+        $command->bindParam(":id", $id);
+	$command->bindParam(":present", $present);
+>>>>>>> 835e886ea1afb323f27e7af00f2dd1422116dfbf
         $dataReader=$command->query();
         $this->render('student', array('dataReader' => $dataReader));
     }
