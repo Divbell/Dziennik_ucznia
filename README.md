@@ -1,4 +1,4 @@
-Dziennik_ucznia
+MyDaily
 ===============
 User admin: 
 
@@ -10,9 +10,9 @@ Hasło do serwera MySql:
 page -> protected -> config -> main.php ->
 
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=dziennik_ucznia',
+			'connectionString' => *'mysql:host=HOST;dbname=NAME_OF_DB'*,
 			'emulatePrepare' => true,
-			'username' => 'root',
+			'username' => *'ENTER YOUR USERNAME HERE'*,
 	  	'password' => *'ENTER YOUR PASSWORD HERE'*, 
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
